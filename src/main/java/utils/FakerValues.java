@@ -33,14 +33,31 @@ public class FakerValues {
 
     public String getSalario(){
         ArrayList<String> list = new ArrayList<String>();
-        list.add(0, "10000");
-        list.add(1, "20000");
-        list.add(2, "30000");
-        list.add(3, "40000");
-        list.add(4, "50000");
-        list.add(5, "60000");
+        list.add(0, "1.000,00");
+        list.add(1, "2.000,00");
+        list.add(2, "3.000,00");
+        list.add(3, "4.000,00");
+        list.add(4, "5.000,00");
+        list.add(5, "6.000,00");
 
         return list.get(randomiza(5));
+    }
+
+    public String getSexo(){
+        ArrayList<String> list = new ArrayList<String>();
+        list.add(0, "m");
+        list.add(1, "f");
+        list.add(2, "i");
+
+        return list.get(randomiza(2));
+    }
+
+    public String getCltOuPj(){
+        ArrayList<String> list = new ArrayList<String>();
+        list.add(0, "clt");
+        list.add(1, "pj");
+
+        return  list.get(randomiza(1));
     }
 
     public String cpf() {

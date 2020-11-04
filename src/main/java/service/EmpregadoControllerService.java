@@ -11,23 +11,24 @@ import static io.restassured.RestAssured.given;
 
 public class EmpregadoControllerService extends JsonService{
 
-    public Response cadastrarUsuario(String[]parametros, int statusCode){
+    public Response cadastrarUsuario(String[]parametros){
 
         Response response = null;
         RestAssured.baseURI = Urls.BASE_URL_REST+"cadastrar";
 
         response = given()
-                .contentType(ContentType.JSON)
+                .auth()
+                .preemptive()
+                .basic("inmetrics", "automacao")
+                .contentType("application/json")
                 .body(getJsonFormatter(parametros, "post_cadastrar_empregado.json"))
                 .when()
                 .post();
 
-        validateStatusCode(response, statusCode);
-
         return response;
     }
 
-    private void validateStatusCode(Response response, int statusCode){
+    public void validateStatusCode(Response response, int statusCode){
 
         Assert.assertEquals("O status code retornado pela API é diferente de "+statusCode,
                 response.getStatusCode(), statusCode);

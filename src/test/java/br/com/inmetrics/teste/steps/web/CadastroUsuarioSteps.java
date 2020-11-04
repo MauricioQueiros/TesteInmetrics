@@ -1,12 +1,10 @@
 package br.com.inmetrics.teste.steps.web;
 
 import cucumber.api.DataTable;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import pageobjects.LoginPage;
+import pageobjects.web.LoginPage;
 
 public class CadastroUsuarioSteps {
 

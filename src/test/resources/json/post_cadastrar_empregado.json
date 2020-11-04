@@ -3,7 +3,7 @@
   "cargo": "?",
   "comissao": "?",
   "cpf": "?",
-  "departamentoId": 0,
+  "departamentoId": 1,
   "nome": "?",
   "salario": "?",
   "sexo": "?",
