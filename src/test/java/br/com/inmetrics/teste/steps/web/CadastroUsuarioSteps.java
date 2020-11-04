@@ -49,14 +49,4 @@ public class CadastroUsuarioSteps {
     public void o_sistema_apresenta_a_mensagem_Senhas_nao_combinam() throws Throwable {
     }
 
-    @Before
-    public void init(){
-        System.out.println("Aqui Before");
-    }
-
-    @After
-    public void tearDown(){
-
-        System.out.println("Aqui After");
-    }
 }
