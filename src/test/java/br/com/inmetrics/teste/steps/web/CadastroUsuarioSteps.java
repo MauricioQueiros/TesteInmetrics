@@ -1,4 +1,4 @@
-package br.com.inmetrics.teste.steps;
+package br.com.inmetrics.teste.steps.web;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.After;
