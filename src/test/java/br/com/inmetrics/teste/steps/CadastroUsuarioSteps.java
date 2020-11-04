@@ -6,11 +6,19 @@ import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import pageobjects.LoginPage;
 
 public class CadastroUsuarioSteps {
 
+    LoginPage login;
+
+    public CadastroUsuarioSteps(){
+        this.login = new LoginPage();
+    }
+
     @Dado("^que esteja no site$")
     public void que_esteja_no_site(DataTable arg1) throws Throwable {
+        login.acessLoginPage("http://www.inmrobo.tk/accounts/login/");
         System.out.println("dado");
     }
 
@@ -32,6 +40,7 @@ public class CadastroUsuarioSteps {
 
     @After
     public void tearDown(){
+
         System.out.println("Aqui After");
     }
 }
