@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/features",
-        glue = {"br.com.inmetrics.teste.steps", "br.com.inmetrics.teste.suport"},
-        tags = {"@Cadastro_Usuario_001"},
+        glue = {"br.com.inmetrics.teste.steps", "br.com.inmetrics.teste.support"},
+        tags = {"@CadastroUsuario"},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",

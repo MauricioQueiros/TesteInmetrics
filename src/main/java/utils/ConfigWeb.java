@@ -6,13 +6,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ConfigWeb {
 
-    WebDriver driver;
+    static WebDriver driver;
 
     public ConfigWeb(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-        this.driver = new ChromeDriver();
+    }
+
+    public void initDriver(){
+        driver = new ChromeDriver();
         PageFactory.initElements(driver, this);
     }
 
     public WebDriver getDriver(){return driver;}
+
+    public void closeDriver(){
+        driver.close();
+    }
 }

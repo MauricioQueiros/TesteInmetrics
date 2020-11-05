@@ -1,6 +1,7 @@
 #language:pt
 #Author: Mauricio Barbosa de Queiros Junior
 #Version: 1.0
+@web
 @EditarFuncionario
 Funcionalidade: Testes de Validação de Edicao de Funcionario.
 

@@ -1,6 +1,7 @@
 #language:pt
 #Author: Mauricio Barbosa de Queiros Junior
 #Version: 1.0
+@web
 @ExcluirFuncionario
 Funcionalidade: Testes de Validação de Exclusao de Funcionario.
 

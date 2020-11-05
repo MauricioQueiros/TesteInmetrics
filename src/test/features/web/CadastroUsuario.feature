@@ -1,6 +1,7 @@
 #language:pt
 #Author: Mauricio Barbosa de Queiros Junior
 #Version: 1.0
+@web
 @CadastroUsuario
 Funcionalidade: Testes de Validação de Cadastro de Usuário.
 

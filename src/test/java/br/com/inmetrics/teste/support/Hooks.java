@@ -9,11 +9,15 @@ public class Hooks extends ConfigWeb {
 
     @Before
     public void init(Scenario scenario) throws InterruptedException{
-        System.out.println("Aqui Before");
+        if(scenario.getSourceTagNames().contains("@web")){
+            initDriver();
+        }
     }
 
     @After
     public void tearDown(Scenario scenario){
-        getDriver().close();
+        if(scenario.getSourceTagNames().contains("@web")){
+            closeDriver();
+        }
     }
 }

@@ -18,7 +18,7 @@ public class FakerValues {
 
         while(i<1) {
             name = faker.name().firstName();
-            if(name.length()>=lenghtName) {i++;}
+            if(name.length()==lenghtName) {i++;}
         }
         return name;
     }
