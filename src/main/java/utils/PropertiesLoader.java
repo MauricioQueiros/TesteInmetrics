@@ -21,4 +21,17 @@ public class PropertiesLoader {
         }
         return properties.getProperty(valor);
     }
+
+    public String getWebPropertie(String valor) {
+        String filePath = new File("").getAbsolutePath();
+        String path = filePath+"/src/test/resources/config/web.properties";
+        properties = new Properties();
+        try {
+            properties.load(new FileInputStream(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Nao foi possivel ler o arquivo web.properties");
+        }
+        return properties.getProperty(valor);
+    }
 }

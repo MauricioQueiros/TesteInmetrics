@@ -6,10 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.ConfigWeb;
 import utils.FakerValues;
 import utils.WebUtils;
 
-public class LoginPage {
+public class LoginPage extends ConfigWeb {
 
     @FindBy(xpath = "//*[contains(@class, 'txt2 bo1')]")
     private WebElement link;
@@ -42,21 +43,18 @@ public class LoginPage {
     private WebElement textSenhasDivergentes;
 
     WebUtils webUtils;
-    WebDriver driver;
     FakerValues faker;
+    WebDriver driver;
 
     public LoginPage() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         this.webUtils = new WebUtils();
-        this.driver = new ChromeDriver();
+        this.driver = getDriver();
         PageFactory.initElements(driver, this);
         this.faker = new FakerValues();
     }
 
-
     public void acessLoginPage(String site) {
         driver.manage().window().maximize();
-
         driver.get(site);
     }
 
@@ -65,7 +63,7 @@ public class LoginPage {
     }
 
     public void clickCadastro() {
-        link.click();
+        webUtils.clickElement(link);
     }
 
     public void setUsuario(int lenghtName) {

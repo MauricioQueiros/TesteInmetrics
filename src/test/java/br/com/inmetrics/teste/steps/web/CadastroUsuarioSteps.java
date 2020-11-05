@@ -1,34 +1,43 @@
 package br.com.inmetrics.teste.steps.web;
 
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import pageobjects.web.LoginPage;
+import utils.PropertiesLoader;
 
 public class CadastroUsuarioSteps {
 
     LoginPage login;
+    PropertiesLoader props;
+
+    static String site;
 
     public CadastroUsuarioSteps(){
         this.login = new LoginPage();
+        this.props = new PropertiesLoader();
     }
 
     @Dado("^que esteja no site$")
-    public void que_esteja_no_site(DataTable arg1) throws Throwable {
-        login.acessLoginPage("http://www.inmrobo.tk/accounts/login/");
-        System.out.println("dado");
+    public void que_esteja_no_site(DataTable params) throws Throwable {
+        site = props.getWebPropertie(params.asMaps(String.class, String.class).get(0).get("Site"));
+        login.acessLoginPage(site);
     }
 
 
     @Quando("^clicar em cadastre-se na tela de login$")
     public void clicar_em_cadastre_se_na_tela_de_login() throws Throwable {
-        System.out.println("quando");
+        login.clickCadastro();
     }
 
     @Entao("^sera cadastrado um novo usuario$")
     public void sera_cadastrado_um_novo_usuario() throws Throwable {
-        System.out.println("entao");
+        login.setUsuario(8);
+        login.setSenha();
+        login.clickCadastrar();
+        login.validarCadatro();
     }
 
     @Quando("^tentar cadastrar um usuario com menos de 8 caracteres$")
