@@ -35,6 +35,23 @@ public class EmpregadoControllerService extends JsonService{
         return response;
     }
 
+    public Response atualizarFuncionario(String[]parametros, String id){
+
+        Response response = null;
+        RestAssured.baseURI = Urls.BASE_URL_REST+"alterar/"+id;
+
+        response = given()
+                .auth()
+                .preemptive()
+                .basic(user, pass)
+                .contentType("application/json")
+                .body(getJsonFormatter(parametros, "post_cadastrar_empregado.json"))
+                .when()
+                .put();
+
+        return response;
+    }
+
     public Response getAllUsers(){
 
         Response response = null;
