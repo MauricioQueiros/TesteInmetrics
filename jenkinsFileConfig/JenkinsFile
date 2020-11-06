@@ -7,7 +7,7 @@ pipeline{
         stage('Tests'){
             steps{
                 script {
-                    bat 'mvn clean test -Dtest=CadastroUsuario -Dbrowser=Chrome -Dcucumber.options="--tags @CadastroUsuario"'
+                    bat 'mvn clean test -Dtest=RunCucumberTest -Dbrowser=Chrome -Dcucumber.options="--tags @CadastroUsuario"'
                     archiveArtifacts artifacts: '**', onlyIfSuccessful: false
                 }
             }
