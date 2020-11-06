@@ -72,4 +72,8 @@ public class WebUtils extends ConfigWeb{
     public String getText(WebElement element){
         return element.getText();
     }
+
+    public void clearText(WebElement element){
+        element.clear();
+    }
 }

@@ -4,30 +4,30 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import io.restassured.response.Response;
-import pageobjects.api.EmpregadoControllerPage;
+import controller.api.EmpregadoController;
 import service.EmpregadoControllerService;
 
 public class CadastrarFuncionarioAPISteps {
 
     EmpregadoControllerService empregadoControllerService;
-    EmpregadoControllerPage empregadoControllerPage;
+    EmpregadoController empregadoController;
 
     static String[] parametros;
     static Response response;
 
     public CadastrarFuncionarioAPISteps(){
         this.empregadoControllerService = new EmpregadoControllerService();
-        this.empregadoControllerPage = new EmpregadoControllerPage();
+        this.empregadoController = new EmpregadoController();
     }
 
     @Dado("^solicitacao de cadastro no servico rest API de Testes Inmetrics com informacoes validas$")
     public void solicitacao_de_cadastro_no_servico_rest_API_de_Testes_Inmetrics_com_informacoes_validas() throws Throwable {
-        parametros = empregadoControllerPage.getParametrosPost(true);
+        parametros = empregadoController.getParametrosPost(true);
     }
 
     @Dado("^solicitacao de cadastro no servico rest API de Testes Inmetrics com informacoes invalidas$")
     public void solicitacao_de_cadastro_no_servico_rest_API_de_Testes_Inmetrics_com_informacoes_invalidas() throws Throwable {
-        parametros = empregadoControllerPage.getParametrosPost(false);
+        parametros = empregadoController.getParametrosPost(false);
     }
 
     @Quando("^cadastrar um novo funcionario$")

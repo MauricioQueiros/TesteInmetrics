@@ -1,14 +1,14 @@
-package pageobjects.api;
+package controller.api;
 
 import utils.DataHelper;
 import utils.FakerValues;
 
-public class EmpregadoControllerPage {
+public class EmpregadoController {
 
     DataHelper dataHelper;
     FakerValues fakerValues;
 
-    public EmpregadoControllerPage(){
+    public EmpregadoController(){
         this.dataHelper = new DataHelper();
         this.fakerValues = new FakerValues();
     }

@@ -1,18 +1,17 @@
 package br.com.inmetrics.teste.steps.api.put;
 
-import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import io.restassured.response.Response;
-import pageobjects.api.EmpregadoControllerPage;
+import controller.api.EmpregadoController;
 import service.EmpregadoControllerService;
 import utils.PropertiesLoader;
 
 public class AtualizarFuncionariosAPISteps {
 
     EmpregadoControllerService empregadoControllerService;
-    EmpregadoControllerPage empregadoControllerPage;
+    EmpregadoController empregadoController;
     PropertiesLoader props;
 
     static String[] parametros;
@@ -20,20 +19,20 @@ public class AtualizarFuncionariosAPISteps {
     static String id;
 
     public AtualizarFuncionariosAPISteps(){
-        this.empregadoControllerPage = new EmpregadoControllerPage();
+        this.empregadoController = new EmpregadoController();
         this.empregadoControllerService = new EmpregadoControllerService();
         this.props = new PropertiesLoader();
     }
 
     @Dado("^solicitacao de atualizacao no servico rest API de Testes Inmetrics com informacoes validas$")
     public void solicitacao_de_atualizacao_no_servico_rest_API_de_Testes_Inmetrics_com_informacoes_validas() throws Throwable {
-        parametros = empregadoControllerPage.getParametrosPost(true);
+        parametros = empregadoController.getParametrosPost(true);
         id = props.getApiPropertie("id_valido");
     }
 
     @Dado("^solicitacao de atualizacao no servico rest API de Testes Inmetrics com informacoes invalidas$")
     public void solicitacao_de_atualizacao_no_servico_rest_API_de_Testes_Inmetrics_com_informacoes_invalidas() throws Throwable {
-        parametros = empregadoControllerPage.getParametrosPost(false);
+        parametros = empregadoController.getParametrosPost(false);
         id = props.getApiPropertie("id_invalido");
     }
 
