@@ -21,15 +21,3 @@ Funcionalidade: Testes de Validação de Cadastro de Funcionario.
     Quando inserir um novo funcionario
     E inserir cpf invalido
     Entao o sistema retornara um alerta de cpf invalido
-
-  @Cadastro_Funcionario_003
-  Cenario: Cadastrar funcionario com contratacao CLT
-    Quando inserir um novo funcionario
-    E colocar tipo de contratacao 'CLT'
-    Entao funcionario sera cadastrado com sucesso
-
-  @Cadastro_Funcionario_004
-  Cenario: Cadastrar funcionario com contratacao CNPJ
-    Quando inserir um novo funcionario
-    E colocar tipo de contratacao 'CNPJ'
-    Entao funcionario sera cadastrado com sucesso

@@ -1,16 +1,18 @@
 package utils;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class WebUtils {
+public class WebUtils extends ConfigWeb{
 
     WebDriver driver;
 
     public WebUtils() {
+        this.driver = getDriver();
         PageFactory.initElements(driver, this);
     }
 
@@ -20,6 +22,10 @@ public class WebUtils {
         } catch (Exception e) {
             Assert.fail("Não foi possível clicar no elemento");
         }
+    }
+
+    public void clickElement(By by){
+        driver.findElement(by).click();
     }
 
     public void setText(WebElement element, String text) {

@@ -43,11 +43,20 @@ public class FakerValues {
         return list.get(randomiza(5));
     }
 
-    public String getSexo(){
+    public String getSexoApi(){
         ArrayList<String> list = new ArrayList<String>();
         list.add(0, "m");
         list.add(1, "f");
         list.add(2, "i");
+
+        return list.get(randomiza(2));
+    }
+
+    public String getSexoWeb(){
+        ArrayList<String> list = new ArrayList<String>();
+        list.add(0, "Masculino");
+        list.add(1, "Feminino");
+        list.add(2, "Indiferente");
 
         return list.get(randomiza(2));
     }
@@ -57,7 +66,7 @@ public class FakerValues {
         list.add(0, "clt");
         list.add(1, "pj");
 
-        return  list.get(randomiza(1));
+        return list.get(randomiza(1));
     }
 
     public String cpf() {

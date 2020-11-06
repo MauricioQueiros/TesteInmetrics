@@ -26,7 +26,7 @@ public class EmpregadoControllerPage {
                     fakerValues.cpf(),
                     fakerValues.getName(8),
                     fakerValues.getSalario(),
-                    fakerValues.getSexo(),
+                    fakerValues.getSexoApi(),
                     fakerValues.getCltOuPj()
             };
 
