@@ -2,6 +2,7 @@ package br.com.inmetrics.teste.steps.web;
 
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import pageobjects.web.ExcluirFuncionarioPage;
 
 public class EditarFuncionarioSteps {
 

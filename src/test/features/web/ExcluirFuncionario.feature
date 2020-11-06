@@ -12,6 +12,6 @@ Funcionalidade: Testes de Validação de Exclusao de Funcionario.
 
   @Excluir_Funcionario_001
   Cenario: Excluir funcionario com sucesso
-    Quando pesquisar um funcionario existente
+    Quando pesquisar um funcionario existente para exclusao
     E realizar sua exclusao
     Entao o sistema retornara mensagem de excluido com sucesso

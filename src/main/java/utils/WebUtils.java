@@ -68,4 +68,8 @@ public class WebUtils extends ConfigWeb{
             Assert.fail("Não foi possível localizar o para elemento");
         }
     }
+
+    public String getText(WebElement element){
+        return element.getText();
+    }
 }
