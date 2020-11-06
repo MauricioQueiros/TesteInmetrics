@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/features",
         glue = {"br.com.inmetrics.teste.steps", "br.com.inmetrics.teste.support"},
-        tags = {"@CadastroUsuario"},
+        tags = {""},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",

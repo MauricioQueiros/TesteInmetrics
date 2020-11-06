@@ -7,6 +7,7 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import pageobjects.web.LoginPage;
 import utils.PropertiesLoader;
+import utils.Urls;
 
 public class CadastroUsuarioSteps {
 
@@ -22,8 +23,7 @@ public class CadastroUsuarioSteps {
 
     @Dado("^que esteja no site$")
     public void que_esteja_no_site(DataTable params) throws Throwable {
-        site = props.getWebPropertie(params.asMaps(String.class, String.class).get(0).get("Site"));
-        login.acessLoginPage(site);
+        login.acessLoginPage(Urls.INM_ROBO);
     }
 
 
@@ -37,7 +37,7 @@ public class CadastroUsuarioSteps {
         login.setUsuario(10);
         login.setSenha();
         login.clickCadastrar();
-        login.validarCadatro();
+        login.validarCadastro();
     }
 
     @Quando("^tentar cadastrar um usuario com menos de 8 caracteres$")

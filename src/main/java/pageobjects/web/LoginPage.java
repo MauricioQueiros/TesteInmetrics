@@ -18,7 +18,7 @@ public class LoginPage extends ConfigWeb {
     @FindBy(className = "txt2 bo1")
     private WebElement btnLogin;
 
-    @FindBy(xpath = "//*[contains(@name, 'username')]")
+    @FindBy(xpath = "//input[@class= 'input100']")
     private WebElement userField;
 
     @FindBy(xpath = "//*[@name = 'pass']")
@@ -36,11 +36,14 @@ public class LoginPage extends ConfigWeb {
     @FindBy(xpath = "//img")
     private WebElement inmLogo;
 
-    @FindBy(xpath = "/html/body/div/div/div/form/div[7]/button")
+    @FindBy(xpath = "//button[contains(@class, 'login100-form-btn')]")
     private WebElement btn;
 
     @FindBy(xpath = "//div[contains(text(),'Senhas não combinam')]")
     private WebElement textSenhasDivergentes;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    private WebElement errorText;
 
     WebUtils webUtils;
     FakerValues faker;
@@ -54,7 +57,6 @@ public class LoginPage extends ConfigWeb {
     }
 
     public void acessLoginPage(String site) {
-        driver.manage().window().maximize();
         driver.get(site);
     }
 
@@ -85,7 +87,7 @@ public class LoginPage extends ConfigWeb {
         webUtils.clickElement(btn);
     }
 
-    public void validarCadatro() {
+    public void validarCadastro() {
         webUtils.validateElement(loginText);
     }
 
@@ -95,6 +97,20 @@ public class LoginPage extends ConfigWeb {
 
     public void validarSenhaDivergente() {
         webUtils.validateElement(textSenhasDivergentes);
+    }
+
+    public void realizarLogin(String user, String pass){
+        webUtils.setText(userField, user);
+        webUtils.setText(passField, pass);
+        webUtils.clickElement(btn);
+    }
+
+    public void validaLogin(){
+        webUtils.validateElement(inmLogo);
+    }
+
+    public void validaErroLogin(){
+        webUtils.validateElement(errorText);
     }
 
 }

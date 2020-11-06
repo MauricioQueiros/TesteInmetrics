@@ -15,6 +15,7 @@ public class ConfigWeb {
     public void initDriver(){
         driver = new ChromeDriver();
         PageFactory.initElements(driver, this);
+        driver.manage().window().maximize();
     }
 
     public WebDriver getDriver(){return driver;}
