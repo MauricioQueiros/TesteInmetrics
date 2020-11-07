@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    triggers{
+        cron('H 9-16 * * 1-5')
+    }
+    stages{
+        stage('Tests'){
+            steps{
+                script {
+                    sh 'mvn clean test -Dtest=RunCucumberTest -Dbrowser=Chrome -Dcucumber.options="--tags @CadastroFuncionarioAPI"'
+                }
+            }
+        }
+        stage('Documentation'){
+            steps{
+                livingDocs featuresDir: 'target', format: 'ALL', hideScenarioKeyword: true, toc: 'LEFT'
+            }
+        }
+        stage('Cucumber Reports'){
+            steps{
+                cucumber buildStatus: "UNSTABLE",
+                        fileIncludePattern: "**/cucumber-reports/CucumberTestReport.json",
+                        jsonReportDirectory: 'target'
+            }
+        }
+    }
+}
