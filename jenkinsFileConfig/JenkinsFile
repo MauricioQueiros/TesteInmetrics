@@ -8,7 +8,6 @@ pipeline{
             steps{
                 script {
                     bat 'mvn clean test -Dtest=RunCucumberTest -Dbrowser=Chrome -Dcucumber.options="--tags @CadastroUsuario"'
-                    && echo 'aqui' (call) || (echo 'ali')
                 }
             }
         }
