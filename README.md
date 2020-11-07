@@ -2,7 +2,7 @@
 
 Projeto de Automação Web e API.
 
-##Descrição
+## Descrição
 
 Projeto focado no desenvolvimento de testes para aplicações WEB e para API's.
 
@@ -12,7 +12,7 @@ Projeto focado no desenvolvimento de testes para aplicações WEB e para API's.
 * **Java 1.8 SDK**
 * **Maven 3.6.3**
 
-##Executando os Testes
+## Executando os Testes
 
 Para executar os testes va até a classe RunCucumberTest e insira uma tag encontrada
 dentro das features, por exemplo a tag @Login.
@@ -24,6 +24,6 @@ Após a execução o projeto ira gerar um report na no caminho:
 Obs: Na raíz do projeto encontram-se arquivos JenkinsFile 
 que são responsaveis por realizar a execução dos testes no Jenkins.
 
-##Autor
+## Autor
 
 * **Mauricio Barbosa de Queiros Junior**
