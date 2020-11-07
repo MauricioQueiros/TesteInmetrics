@@ -13,14 +13,14 @@ pipeline{
         }
         stage('Documentation'){
             steps{
-                livingDocs featuresDir: '**/target', format: 'ALL', hideScenarioKeyword: true, toc: 'LEFT'
+                livingDocs featuresDir: 'target', format: 'ALL', hideScenarioKeyword: true, toc: 'LEFT'
             }
         }
         stage('Cucumber Reports'){
             steps{
                 cucumber buildStatus: "UNSTABLE",
                         fileIncludePattern: "**/cucumber-reports/CucumberTestReport.json",
-                        jsonReportDirectory: '**/target'
+                        jsonReportDirectory: 'target'
             }
         }
     }
